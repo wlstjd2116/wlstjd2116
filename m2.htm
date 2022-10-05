@@ -45,11 +45,11 @@
 
 			<div id="BusContent">
 
-			<!-- <a id="cont1" href="#">
+			<a id="cont1" href="#">
 				<table class="m1_list">
 					<tr>
-						<td class="bus_num">급행1</td>
-						<td class="bus_info">안동터미널 <img src="img/arrow.png"> 경북도청</td>
+						<td class="bus_num">첨성대</td>
+						<td class="bus_info">경주시 첨성대</td>
 						<td class="bus_view">상세보기</td>
 					</tr>
 				</table>
@@ -58,8 +58,8 @@
 			<a id="cont2" href="#">
 				<table class="m1_list">
 					<tr>
-						<td class="bus_num">순환1</td>
-						<td class="bus_info">안동터미널 <img src="img/arrow.png"> 안동터미널</td>
+						<td class="bus_num">첨성대</td>
+						<td class="bus_info">경주시 첨성대</td>
 						<td class="bus_view">상세보기</td>
 					</tr>
 				</table>
@@ -68,12 +68,12 @@
 			<a id="cont3" href="#">
 				<table class="m1_list">
 					<tr>
-						<td class="bus_num">순환2</td>
-						<td class="bus_info">안동터미널 <img src="img/arrow.png"> 안동터미널</td>
+						<td class="bus_num">첨성대</td>
+						<td class="bus_info">경주시 첨성대</td>
 						<td class="bus_view">상세보기</td>
 					</tr>
 				</table>
-			</a> -->
+			</a>
 
 			</div>
 
@@ -100,6 +100,8 @@ for(var i=0; i < getRouteList.length; i++) {
 	var wkndOpTime = Data[5];
 	var wkndClTime = Data[6];
 	var fee = Data[7];
+
+	// 입장료 무료
 	if(fee === "무료입장") {
 		busContent  += '<a id="' + routeId + '" href="m1_1.htm?menu=' + menu + '&routeid=' + routeId + '" data-ajax="false">'
 						+  '<table class="m1_list">'

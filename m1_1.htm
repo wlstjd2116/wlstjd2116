@@ -38,15 +38,15 @@
 		<div id="m_content" class="m_content">
 			<dl class="m1_view">
 				<dt class="num">관광지명</dt>
-				<dd id="routeNum"></dd>
+				<dd id="desName"></dd>
 			</dl>
 			<dl class="m1_view">
 				<dt>주소</dt>
-				<dd id="StationNm"></dd>
+				<dd id="desAddress"></dd>
 			</dl>
 			<dl class="m1_view">
 				<dt>영업시간</dt>
-				<dd id="vehicletime"></dd>
+				<dd id="openTime"></dd>
 			</dl>
 			<dl class="m1_view">
 				<dt>주말시간</dt>
@@ -75,20 +75,24 @@ for(var i=0; i < getRouteList.length; i++) {
 		continue;
 	}
 
-	var routeNum = Data[1];
-	var stStationNm = Data[2];
-	var edStationNm = Data[3];
-	var startvehicletime = Data[4];
-	var wkndOpTime = Data[5];
-	var wkndEndTime = Data[6];
-	var fee = Data[7];
+	var routeNum = Data[1]; //관광지명
+	var desAddress = Data[2]; //관광지 주소
+	var opTime = Data[3]; // 개장시간
+	var endTime = Data[4]; // 폐장시간
+	var wkndOpTime = Data[5]; // 주말 개장시간
+	var wkndEndTime = Data[6]; // 주말 폐장시간
+	var fee = Data[7]; // 입장료
+ 
+	// 주소
+	var outDesAdd = ""; 
+	if (desAddress) outDesAdd += "주소 : " + desAddress;
 
-	var StationNm = "";
-	if (stStationNm) StationNm += "주소 : " + stStationNm;
-	var vehicletime = "";
-	if (edStationNm) vehicletime += "개장시간 : " + edStationNm;
-	if (startvehicletime) vehicletime += "<br>폐장시간 : " + startvehicletime;
+	// 평일시간
+	var normalTime = "";
+	if (opTime) normalTime += "개장시간 : " + opTime;
+	if (endTime) normalTime += "<br>폐장시간 : " + endTime;
 
+	// 주말시간
 	var wkndTime = "";
 	if (wkndOpTime) wkndTime += "개장시간 : " +  wkndOpTime;
 	if (wkndEndTime) wkndTime += "<br>폐장시간 : " +  wkndEndTime;
@@ -96,10 +100,10 @@ for(var i=0; i < getRouteList.length; i++) {
 
 	var pay = "";
 	if (fee) pay += fee;
-	$('#routeNum').html(routeNum);
+	$('#desName').html(routeNum);
 	$('#routeNms').html(wkndTime);
-	$('#StationNm').html(StationNm);
-	$('#vehicletime').html(vehicletime);
+	$('#desAddress').html(outDesAdd);
+	$('#openTime').html(normalTime);
 	$('#fee').html(pay);
 
 }
