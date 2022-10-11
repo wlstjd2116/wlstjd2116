@@ -67,6 +67,7 @@ nav ul li.on a {font-weight:600;color:#ff5020 !important;}
 /* 콘텐츠 영역 */
 .content {float:left;width:100%;padding-bottom:150px;margin-top:145px;}
 .content h2 {float:left;padding:5px 15px;margin:20px 0 10px 10px;font-size:10pt;font-weight:400;color:#fff;border-radius:30px;background-color:#ff8670;}
+.content h3 {float:right;padding:5px 15px;margin:20px 20px 10px 10px;font-size:10pt;font-weight:400;color:#fff;border-radius:30px;background-color:#ff8670;}
 
 
 /* 폰트 컬러 */
@@ -87,6 +88,7 @@ nav ul li.on a {font-weight:600;color:#ff5020 !important;}
 
 
 /* 시내버스 */
+.content .wrap {}
 .m_content {float:left;width:100%;}
 .m1_title {border-top:1px solid #ddd;background-color:#eff3f6;}
 .m1_title, .m1_list {float:left;width:100%;margin:0;border-bottom:1px solid #ddd;}
@@ -102,10 +104,11 @@ nav ul li.on a {font-weight:600;color:#ff5020 !important;}
 .m1_view {float:left;width:100%;padding:5px 0 10px 0;margin:5px 0;line-height:24px;border-bottom:1px solid #ddd;}
 .m1_view dt {float:left;width:120px;font-weight:600;text-align:center;background-repeat:no-repeat;background-position:15px 50%;background-size:auto 15px;}
 .m1_view:nth-child(1) dt {background-image:url(../img/icon_heart.png);}
-.m1_view:nth-child(2) dt {background-image:url(../img/icon_map.png);}
-.m1_view:nth-child(3) dt {background-image:url(../img/icon_time.png);}
-.m1_view:nth-child(4) dt {background-image:url(../img/icon_bus.png);}
+.m1_view:nth-child(2) dt {background-image:url(../img/icon_heart.png);}
+.m1_view:nth-child(3) dt {background-image:url(../img/icon_map.png);}
+.m1_view:nth-child(4) dt {background-image:url(../img/icon_time.png);}
 .m1_view:nth-child(5) dt {background-image:url(../img/icon_bus.png);}
+.m1_view:nth-child(6) dt {background-image:url(../img/icon_bus.png);}
 .m1_view dd {float:left;width:calc(100% - 130px);padding:0;margin:0;}
 
 

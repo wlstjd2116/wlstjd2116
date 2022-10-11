@@ -34,8 +34,12 @@
 <div id="content" class="content">
 	<div class="wrap">
 		<h2>유료입장 상세보기</h2>
-
+		<h3><img src="img/unbook.png" class="bkmark" width="auto" height="20px"/></h3>
 		<div id="m_content" class="m_content">
+			<dl class="m1_view">
+				<dt>사진</dt>
+				<dd id="image"></dd>
+			</dl>
 			<dl class="m1_view">
 				<dt class="num">관광지명</dt>
 				<dd id="desName"></dd>
@@ -50,12 +54,13 @@
 			</dl>
 			<dl class="m1_view">
 				<dt>주말시간</dt>
-				<dd id="routeNms"></dd>
+				<dd id="wkndTime"></dd>
 			</dl>
 			<dl class="m1_view">
 				<dt>입장료</dt>
 				<dd id="fee"></dd>
 			</dl>
+			
 		</div>
 
 	<div>
@@ -75,14 +80,18 @@ for(var i=0; i < getRouteList.length; i++) {
 		continue;
 	}
 
-	var routeNum = Data[1]; //관광지명
+	var routeName = Data[1]; //관광지명
 	var desAddress = Data[2]; //관광지 주소
 	var opTime = Data[3]; // 개장시간
 	var endTime = Data[4]; // 폐장시간
 	var wkndOpTime = Data[5]; // 주말 개장시간
 	var wkndEndTime = Data[6]; // 주말 폐장시간
 	var fee = Data[7]; // 입장료
- 
+
+	//이미지
+	var img = "";
+	img += "<img src='img/"+routeId+".jpg' alt="+routeId+" width='500px' height='300px'>";
+
 	// 주소
 	var outDesAdd = ""; 
 	if (desAddress) outDesAdd += "주소 : " + desAddress;
@@ -96,18 +105,38 @@ for(var i=0; i < getRouteList.length; i++) {
 	var wkndTime = "";
 	if (wkndOpTime) wkndTime += "개장시간 : " +  wkndOpTime;
 	if (wkndEndTime) wkndTime += "<br>폐장시간 : " +  wkndEndTime;
+	
 	wkndTime = wkndTime.replace(/-/gi,'<br> -> ');
 
+	// 입장료
 	var pay = "";
 	if (fee) pay += fee;
-	$('#desName').html(routeNum);
-	$('#routeNms').html(wkndTime);
+
+	$('#image').html(img);
+	$('#desName').html(routeName);
+	$('#wkndTime').html(wkndTime);
 	$('#desAddress').html(outDesAdd);
 	$('#openTime').html(normalTime);
 	$('#fee').html(pay);
 
 }
 
+var cnt = 0;
+var bookList = [];
+$('.bkmark').click(function () {
+	if (cnt === 0){
+		$('.bkmark').attr('src', './img/book.png');
+		cnt++;
+		bookList.push(JSON.parse(localStorage.getItem('session')));
+		localStorage.setItem('session', JSON.stringify(bookList));
+	}
+	else {
+		$('.bkmark').attr('src', './img/unbook.png');
+		cnt = 0;
+		localStorage.removeItem('book');
+	}
+	console.log(localStorage.getItem('book'));
+})
 </script>
 
 </body>
