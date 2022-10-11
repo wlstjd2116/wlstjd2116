@@ -33,7 +33,7 @@
 
 <div id="content" class="content">
 	<div class="wrap">
-		<h2>무료입장</h2>
+		<h2>즐겨찾기</h2>
 
 		<div id="m_content" class="m_content">
 			<table class="m1_title">
@@ -43,41 +43,8 @@
 					<td class="bus_view">상세보기</td>
 				</tr>
 			</table>
-
-			<div id="BusContent">
-
-			<a id="cont1" href="#">
-				<table class="m1_list">
-					<tr>
-						<td class="bus_num">첨성대</td>
-						<td class="bus_info">경주시 첨성대</td>
-						<td class="bus_view">상세보기</td>
-					</tr>
-				</table>
-			</a>
-
-			<a id="cont2" href="#">
-				<table class="m1_list">
-					<tr>
-						<td class="bus_num">첨성대</td>
-						<td class="bus_info">경주시 첨성대</td>
-						<td class="bus_view">상세보기</td>
-					</tr>
-				</table>
-			</a>
-
-			<a id="cont3" href="#">
-				<table class="m1_list">
-					<tr>
-						<td class="bus_num">첨성대</td>
-						<td class="bus_info">경주시 첨성대</td>
-						<td class="bus_view">상세보기</td>
-					</tr>
-				</table>
-			</a>
-
-			</div>
-
+			
+			<div id="BusContent"></div>
 		</div>
 
 	<div>
@@ -102,8 +69,8 @@ for(var i=0; i < getRouteList.length; i++) {
 	var wkndClTime = Data[6];
 	var fee = Data[7];
 
-	// 입장료 무료
-	if(fee === "무료입장") {
+	// 즐겨찾기 기준
+	if(localStorage.getItem(routeName) === 'checked') {
 		busContent  += '<a id="' + routeId + '" href="m1_1.htm?menu=' + menu + '&routeid=' + routeId + '" data-ajax="false">'
 						+  '<table class="m1_list">'
 						+  '<tr>'

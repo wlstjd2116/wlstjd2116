@@ -24,13 +24,33 @@
 <div id="content" class="content">
 	<div class="wrap">
 		<img src="https://cdn-icons-png.flaticon.com/512/4474/4474074.png" alt="index"><br>
-		<a href="m1.htm?menu=1" id="appMenu1">유료입장</a>
-		<a href="m2.htm?menu=2" id="appMenu2">무료입장</a>
+		<div id="dp"></div>
 	<div>
 </div>
 
 
 <script src="js/app.common.js"></script>
+<script>
+	var ss_id = localStorage.getItem('id');
+	if(!ss_id) ss_id = "";
+	console.log(ss_id);
+
+	var template = "";
+	if(ss_id){
+		template = `<a href="m1.htm?menu=1" id="appMenu1">유료입장</a>
+					<a href="m2.htm?menu=2" id="appMenu2">무료입장</a>
+					<a href="index.htm?" id="logout">로그아웃</a>`;
+		console.log("예스 인절미");
+	}
+	else if(ss_id === ""){
+		template = `<a href="m4.htm? id="login">로그인</a>`;
+	}
+	
+	$('#dp').html(template);
+	$('#logout').click(function(){
+		localStorage.removeItem('id');
+	})
+</script>
 
 </body>
 </html>
