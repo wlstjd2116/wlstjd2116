@@ -54,7 +54,7 @@
 <script src="db/RouteList.js"></script>
 
 <script>
-var busContent = "";
+var Content = "";
 var Cnt = 0;
 
 for(var i=0; i < getRouteList.length; i++) {
@@ -70,8 +70,8 @@ for(var i=0; i < getRouteList.length; i++) {
 	var fee = Data[7];
 
 	// 즐겨찾기 기준
-	if(localStorage.getItem(routeName) === 'checked') {
-		busContent  += '<a id="' + routeId + '" href="m1_1.htm?menu=' + menu + '&routeid=' + routeId + '" data-ajax="false">'
+	if(localStorage.getItem('bkmrklist').includes(routeName)) {
+		Content  += '<a id="' + routeId + '" href="m1_1.htm?menu=' + menu + '&routeid=' + routeId + '" data-ajax="false">'
 						+  '<table class="m1_list">'
 						+  '<tr>'
 						+  '  <td class="bus_num">' + routeName + '</td>'
@@ -87,7 +87,7 @@ for(var i=0; i < getRouteList.length; i++) {
 
 if (Cnt > 0) {
 	$('#BusContent').html("");
-	$('#BusContent').html(busContent);
+	$('#BusContent').html(Content);
 }
 
 </script>

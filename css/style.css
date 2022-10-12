@@ -324,8 +324,8 @@ nav ul li.on a {
 .m1_view:nth-child(6) dt {
   background-image: url(../img/icon_bus.png);
 }
-.m1_view:nth-child(6) dt {
-  background-image: url(../img/icon_bus.png);
+.m1_view:nth-child(7) dt {
+  background-image: url(../img/icon_map.png);
 }
 .m1_view dd {
   float: left;
